@@ -1,8 +1,11 @@
 package edu.pucmm.mineriadedatos2017.main;
 
+import edu.pucmm.mineriadedatos2017.alerta.Alerta;
 import edu.pucmm.mineriadedatos2017.util.FXMLUtil;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -32,6 +35,11 @@ public class Main extends Application {
         primaryStage.setMaximized(true);
         primaryStage.setMinWidth(MIN_WIDTH);
         primaryStage.setMinHeight(MIN_HEIGHT);
+        primaryStage.setOnCloseRequest(event -> {
+            event.consume();
+            if (new Alerta(Alert.AlertType.WARNING).cerrarPrograma())
+                Platform.exit();
+        });
         primaryStage.show();
     }
 }
