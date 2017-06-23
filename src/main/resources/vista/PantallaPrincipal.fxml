@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import org.controlsfx.control.PrefixSelectionComboBox?>
 <?import org.controlsfx.control.textfield.CustomTextField?>
-<StackPane fx:id="stackPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
-           minWidth="-Infinity" prefHeight="521.0" prefWidth="740.0" stylesheets="/css/main.css"
-           xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="edu.pucmm.mineriadedatos2017.controladora.PantallaPrincipalControladora">
+
+<StackPane fx:id="stackPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="740.0" stylesheets="/css/main.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pucmm.mineriadedatos2017.controladora.PantallaPrincipalControladora">
     <children>
         <BorderPane fx:id="borderPane" prefHeight="200.0" prefWidth="200.0">
             <top>
@@ -18,65 +23,56 @@
                     <menus>
                         <Menu fx:id="menu" mnemonicParsing="false" text="Archivo">
                             <items>
-                                <MenuItem fx:id="menuItemAbrir" mnemonicParsing="false" text="Abrir"/>
-                                <MenuItem fx:id="menuItemSalir" mnemonicParsing="false" text="Salir"/>
+                                <MenuItem fx:id="menuItemAbrir" mnemonicParsing="false" text="Abrir" />
+                                <MenuItem fx:id="menuItemSalir" mnemonicParsing="false" text="Salir" />
                             </items>
                         </Menu>
                     </menus>
                 </MenuBar>
             </top>
             <center>
-                <VBox fx:id="vBox" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0"
-                      BorderPane.alignment="CENTER">
+                <VBox fx:id="vBox" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                     <children>
-                        <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true"
-                                   preserveRatio="true">
+                        <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                             <VBox.margin>
-                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </VBox.margin>
                         </ImageView>
                         <HBox fx:id="hBox" alignment="TOP_CENTER" prefHeight="0.0" prefWidth="740.0">
                             <children>
-                                <CustomTextField fx:id="txtFjeldArchivo" maxWidth="500.0" minHeight="25.0"
-                                                 minWidth="500.0">
+                                <CustomTextField fx:id="txtFjeldArchivo" maxWidth="500.0" minHeight="25.0" minWidth="500.0">
                                     <HBox.margin>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                     </HBox.margin>
                                 </CustomTextField>
-                                <Button fx:id="btnBuscarArchivo" maxWidth="150.0" minHeight="25.0" minWidth="150.0"
-                                        mnemonicParsing="false" text="Buscar archivo">
+                                <Button fx:id="btnBuscarArchivo" maxWidth="150.0" minHeight="25.0" minWidth="150.0" mnemonicParsing="false" text="Buscar archivo">
                                     <HBox.margin>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                     </HBox.margin>
                                 </Button>
                             </children>
                         </HBox>
                         <HBox fx:id="hBox2" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                             <children>
-                                <PrefixSelectionComboBox fx:id="comboBoxSeleccioneAlgoritmo" maxWidth="300.0"
-                                                         minHeight="25.0" minWidth="300.0"
-                                                         promptText="Seleccione algoritmo">
+                                <PrefixSelectionComboBox fx:id="comboBoxSeleccioneAlgoritmo" maxWidth="300.0" minHeight="25.0" minWidth="300.0" promptText="Seleccione algoritmo">
                                     <HBox.margin>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                     </HBox.margin>
                                 </PrefixSelectionComboBox>
-                                <Button fx:id="btnEjecutarAlgoritmo" maxWidth="150.0" minHeight="25.0" minWidth="150.0"
-                                        mnemonicParsing="false" text="Ejecutar algoritmo">
+                                <Button fx:id="btnEjecutarAlgoritmo" maxWidth="150.0" minHeight="25.0" minWidth="150.0" mnemonicParsing="false" text="Ejecutar algoritmo">
                                     <HBox.margin>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                     </HBox.margin>
                                 </Button>
                             </children>
                         </HBox>
-                        <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true"
-                                    maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
-                                    prefHeight="9999.0" prefWidth="9999.0">
+                        <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="9999.0" prefWidth="9999.0">
                             <content>
-                                <TextArea fx:id="txtArea" maxHeight="1.7976931348623157E308"
-                                          maxWidth="1.7976931348623157E308"/>
+                                <TextArea fx:id="txtArea" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                                </TextArea>
                             </content>
                             <VBox.margin>
-                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </VBox.margin>
                         </ScrollPane>
                     </children>

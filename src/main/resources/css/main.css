@@ -1,0 +1,36 @@
+#stackPane{
+    -fx-background-image: url("../fotos/wekafx_fondo.png");
+}
+
+.menu{
+    -fx-background-color: transparent;
+}
+
+#vBox{
+    -fx-padding: 40px;
+}
+
+#txtFjeldArchivo{
+    -fx-border-width: 20px;
+}
+
+.text-area{
+    -fx-background-color: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+}
+
+.button{
+    -fx-border-color: #999;
+    -fx-text-fill: #999;
+}
+
+#btnBuscarArchivo{
+    -fx-background-color: #f2f2f2;
+    -fx-border-width: 0 0 0 1px;
+    -fx-padding: 0 16px;
+}
+
+#btnEjecutarAlgoritmo{
+    -fx-background-color: #fff;
+    -fx-border-width: 0 1px;
+    -fx-padding: 0 4px;
+}
