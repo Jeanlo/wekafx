@@ -34,4 +34,10 @@ public class Alerta extends Alert {
 
         return resultado.get() == buttonSi;
     }
+
+    public void aviso(String contenido) {
+        alert.setTitle("Aviso!");
+        alert.setHeaderText("Esta tratando de copiar un archivo invalido.");
+        alert.setContentText(contenido);
+    }
 }

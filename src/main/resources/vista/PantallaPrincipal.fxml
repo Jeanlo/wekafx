@@ -3,10 +3,14 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.*?>
 <?import org.controlsfx.control.PrefixSelectionComboBox?>
 <?import org.controlsfx.control.textfield.CustomTextField?>
-<StackPane fx:id="stackPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="740.0" stylesheets="/css/main.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.pucmm.mineriadedatos2017.controladora.PantallaPrincipalControladora">
+<StackPane fx:id="stackPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="600.0"
+           minWidth="900.0" prefHeight="600.0" prefWidth="900.0" stylesheets="/css/main.css"
+           xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="edu.pucmm.mineriadedatos2017.controladora.PantallaPrincipalControladora">
     <children>
         <BorderPane fx:id="borderPane" prefHeight="200.0" prefWidth="200.0">
             <top>
@@ -15,9 +19,19 @@
                         <Menu fx:id="menu" mnemonicParsing="false" text="Archivo">
                             <items>
                                 <MenuItem fx:id="menuItemAbrir" mnemonicParsing="false"
-                                          onAction="#menuItemAbrirArchivoClick" text="Abrir"/>
+                                          onAction="#menuItemAbrirArchivoClick" text="Abrir">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="DOWN" code="O" control="DOWN" meta="UP" shift="UP"
+                                                            shortcut="UP"/>
+                                    </accelerator>
+                                </MenuItem>
                                 <MenuItem fx:id="menuItemSalir" mnemonicParsing="false" onAction="#menuItemSalirClick"
-                                          text="Salir"/>
+                                          text="Salir">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="DOWN" code="Q" control="DOWN" meta="UP" shift="UP"
+                                                            shortcut="UP"/>
+                                    </accelerator>
+                                </MenuItem>
                             </items>
                         </Menu>
                     </menus>
@@ -57,13 +71,6 @@
                                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                     </HBox.margin>
                                 </PrefixSelectionComboBox>
-                                <Button fx:id="btnEjecutarAlgoritmo" maxWidth="150.0" minHeight="25.0" minWidth="150.0"
-                                        mnemonicParsing="false" onAction="#btnEjecutarAlgoritmoClick"
-                                        text="Ejecutar algoritmo">
-                                    <HBox.margin>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                    </HBox.margin>
-                                </Button>
                             </children>
                         </HBox>
                         <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="9999.0" prefWidth="9999.0">
