@@ -2,6 +2,7 @@ package edu.pucmm.mineriadedatos2017.alerta;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.DialogPane;
 
 import java.util.Optional;
 
@@ -20,6 +21,12 @@ public class Alerta extends Alert {
     }
 
     public boolean cerrarPrograma() {
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add("/css/main.css");
+        dialogPane.getStyleClass().add(".dialog-pane");
+        dialogPane.toFront();
+        dialogPane.requestFocus();
+
         alert.setTitle("Aviso!");
         alert.setHeaderText("Cerrando programa.");
         alert.setContentText("Esta seguro que desea cerrar el programa?");
