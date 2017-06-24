@@ -1,6 +1,8 @@
 package edu.pucmm.mineriadedatos2017.controladora;
 
 import edu.pucmm.mineriadedatos2017.alerta.Alerta;
+import edu.pucmm.mineriadedatos2017.algoritmos.J48;
+import edu.pucmm.mineriadedatos2017.algoritmos.NaiveBayes;
 import edu.pucmm.mineriadedatos2017.enums.Algoritmo;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
@@ -228,10 +230,12 @@ public class PantallaPrincipalControladora implements Initializable {
     }
 
     void algortimoJ48() {
-
+        J48 j48 = new J48(file);
+        txtArea.setText(j48.imprimir().toString());
     }
 
     void algoritmoNaiveBayes() {
-
+        NaiveBayes naiveBayes = new NaiveBayes(file);
+        txtArea.setText(naiveBayes.imprimir().toString());
     }
 }
