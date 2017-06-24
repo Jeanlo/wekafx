@@ -2,10 +2,10 @@ package edu.pucmm.mineriadedatos2017.algoritmos;
 
 import java.io.File;
 
-public class NaiveBayes {
+public class AlgoritmoNaiveBayes {
     private File file;
 
-    public NaiveBayes(File file) {
+    public AlgoritmoNaiveBayes(File file) {
         this.file = file;
     }
 
