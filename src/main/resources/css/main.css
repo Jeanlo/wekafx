@@ -6,32 +6,59 @@
     -fx-background-image: url("../fotos/wekafx_fondo.png");
 }
 
-.menu{
-    -fx-background-color: transparent;
+#menuBar{
+    -fx-background-color: linear-gradient(to bottom, rgba(242,242,242,0.4) 0%, rgba(216,216,216,0.2) 100%);
+    -fx-border-width: 0 0 1px 0;
+    -fx-border-color: #999;
+}
+
+.menu:hover, .menu:showing, .menu-item:focused{
+    -fx-background-color: rgba(255, 102, 0, 0.8);
 }
 
 #vBox{
     -fx-padding: 40px;
 }
 
-#txtFjeldArchivo{
-    -fx-border-width: 20px;
-}
-
-.text-area{
-
+.scroll-pane, #hBox, #hBox2{
+    -fx-effect: dropshadow(three-pass-box, rgba(34,34,34,0.2), 4, 0.0, 4, 4);
 }
 
 .button{
     -fx-border-color: #999;
     -fx-text-fill: #222;
     -fx-background-color: linear-gradient(to bottom, #f2f2f2 0%, #d8d8d8 100%);
+    -fx-padding: 0;
+    -fx-cursor: hand;
+    -fx-min-height: 25px;
+    -fx-min-width: 150px;
+    -fx-max-width: 150px;
 }
 
-#btnBuscarArchivo{
-    -fx-padding: 0 16px;
+.button:hover{
+    -fx-background-color: linear-gradient(to bottom, #d8d8d8 0%, #f2f2f2 100%);
 }
 
-#btnEjecutarAlgoritmo{
-    -fx-padding: 0 4px;
+.dialog-pane > .button-bar > .container {
+    -fx-background-color: linear-gradient(to bottom, rgba(242,242,242,0.4) 0%, rgba(216,216,216,0.2) 100%);
+    -fx-content-display: center;
 }
+
+.dialog-pane .header-panel {
+    -fx-background-color: white;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-text-fill: #222;
+    -fx-font-size: 14.0px;
+}
+
+.dialog-pane > .content.label {
+    -fx-padding: 0.5em 0.5em 0.5em 0.5em;
+    -fx-background-color: white;
+    -fx-text-fill: #222;
+    -fx-font-size: 14.0px;
+}
+
