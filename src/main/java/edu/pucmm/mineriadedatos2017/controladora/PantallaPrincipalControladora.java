@@ -136,6 +136,7 @@ public class PantallaPrincipalControladora implements Initializable {
             if (event.getDragboard().getFiles().get(0).getName().toLowerCase().endsWith(".arff") && event.getDragboard().hasFiles()) {
                 logger.info("Cargando archivo.");
                 txtFieldArchivo.setText(event.getDragboard().getFiles().get(0).getAbsolutePath());
+                archivo.setValue(txtFieldArchivo.getText());
                 logger.info("Archivo cargado.");
                 pantallaAlFrente();
                 comboBoxSeleccioneAlgoritmo.getSelectionModel().clearSelection();
@@ -151,6 +152,7 @@ public class PantallaPrincipalControladora implements Initializable {
             if (event.getDragboard().getFiles().get(0).getName().toLowerCase().endsWith(".arff") && event.getDragboard().hasFiles()) {
                 logger.info("Cargando archivo.");
                 txtFieldArchivo.setText(event.getDragboard().getFiles().get(0).getAbsolutePath());
+                archivo.setValue(txtFieldArchivo.getText());
                 logger.info("Archivo cargado.");
                 pantallaAlFrente();
                 comboBoxSeleccioneAlgoritmo.getSelectionModel().clearSelection();
@@ -201,6 +203,7 @@ public class PantallaPrincipalControladora implements Initializable {
         file = fileChooser.showOpenDialog(btnBuscarArchivo.getScene().getWindow());
 
         if (file != null) {
+            comboBoxSeleccioneAlgoritmo.getSelectionModel().clearSelection();
             return file.getAbsolutePath();
         } else {
             return null;
