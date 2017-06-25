@@ -14,7 +14,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.TransferMode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -100,7 +99,6 @@ public class PantallaPrincipalControladora implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         logger.info("Iniciando componentes de la pantalla principal.");
-        setDragDrop();
         setCampos();
         resetearCampos();
     }
@@ -129,41 +127,6 @@ public class PantallaPrincipalControladora implements Initializable {
         salir();
     }
 
-    //Funcion para configurar los drag and drop del componente de textfield y la pantalla entera
-    void setDragDrop() {
-        vBox.setOnDragOver(event -> {
-            if (event.getDragboard().hasFiles())
-                event.acceptTransferModes(TransferMode.COPY);
-        });
-        vBox.setOnDragDropped(event -> {
-            if (event.getDragboard().getFiles().get(0).getName().toLowerCase().endsWith(".arff") && event.getDragboard().hasFiles()) {
-                logger.info("Cargando archivo.");
-                txtFieldArchivo.setText(event.getDragboard().getFiles().get(0).getAbsolutePath());
-                archivo.setValue(txtFieldArchivo.getText());
-                logger.info("Archivo cargado.");
-                pantallaAlFrente();
-                comboBoxSeleccioneAlgoritmo.getSelectionModel().clearSelection();
-            } else
-                new Alerta(Alert.AlertType.INFORMATION).aviso("Debe de arrastrar un archivo que sea de extension arff.");
-        });
-
-        txtFieldArchivo.setOnDragOver(event -> {
-            if (event.getDragboard().hasFiles())
-                event.acceptTransferModes(TransferMode.COPY);
-        });
-        txtFieldArchivo.setOnDragDropped(event -> {
-            if (event.getDragboard().getFiles().get(0).getName().toLowerCase().endsWith(".arff") && event.getDragboard().hasFiles()) {
-                logger.info("Cargando archivo.");
-                txtFieldArchivo.setText(event.getDragboard().getFiles().get(0).getAbsolutePath());
-                archivo.setValue(txtFieldArchivo.getText());
-                logger.info("Archivo cargado.");
-                pantallaAlFrente();
-                comboBoxSeleccioneAlgoritmo.getSelectionModel().clearSelection();
-            } else
-                new Alerta(Alert.AlertType.INFORMATION).aviso("Debe de arrastrar un archivo que sea de extension arff.");
-        });
-    }
-
     //Funcion que inicializa los campos de algunos componentes
     void setCampos() {
         imageView.setImage(new Image("/fotos/wekafx_logo.png"));
@@ -172,6 +135,7 @@ public class PantallaPrincipalControladora implements Initializable {
         comboBoxSeleccioneAlgoritmo.setItems(FXCollections.observableArrayList(Algoritmo.values()));
 
         txtFieldArchivo.textProperty().bindBidirectional(archivo);
+
 
         fileChooser.setTitle("Buscar algoritmo");
 //        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Archivo WEKA (*.arff)"));
