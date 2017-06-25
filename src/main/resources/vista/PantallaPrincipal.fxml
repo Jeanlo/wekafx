@@ -61,9 +61,9 @@
                                 </Button>
                             </children>
                         </HBox>
-                        <HBox fx:id="hBox2" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                        <HBox fx:id="hBox2" alignment="CENTER" prefHeight="100.0" prefWidth="610.0">
                             <children>
-                                <CustomTextField fx:id="txtFieldValor"/>
+                                <CustomTextField fx:id="txtFieldValor" minWidth="300.0" maxWidth="300.0"/>
                                 <PrefixSelectionComboBox fx:id="comboBoxSeleccioneAlgoritmo" maxWidth="300.0"
                                                          minHeight="25.0" minWidth="300.0"
                                                          onAction="#comboBoxSeleccionAlgoritmoClick"

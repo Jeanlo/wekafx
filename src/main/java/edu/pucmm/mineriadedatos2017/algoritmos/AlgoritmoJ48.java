@@ -36,8 +36,8 @@ public class AlgoritmoJ48 {
             Instance inst = new DenseInstance(data.numAttributes());
             inst.setDataset(data);
 
-            String valoresSet = "sunny,cool,high,TRUE,no";
-            String [] valores = valoresSet.split(",");
+            String valoresSet = this.customTextField.getText();
+            String [] valores = valoresSet.split(" ");
             for(int i = 0; i < data.numAttributes(); i++){
                 inst.setValue(i, valores[i]);
             }
