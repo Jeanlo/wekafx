@@ -1,5 +1,6 @@
 package edu.pucmm.mineriadedatos2017.algoritmos;
 
+import org.controlsfx.control.textfield.CustomTextField;
 import weka.classifiers.meta.FilteredClassifier;
 import weka.classifiers.trees.J48;
 import weka.core.DenseInstance;
@@ -8,13 +9,14 @@ import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
 
 import java.io.File;
-import java.util.ArrayList;
 
 public class AlgoritmoJ48 {
     private File file;
+    private CustomTextField customTextField;
 
-    public AlgoritmoJ48(File file) {
+    public AlgoritmoJ48(File file, CustomTextField customTextField) {
         this.file = file;
+        this.customTextField = customTextField;
     }
 
     public StringBuilder imprimir() {

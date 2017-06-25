@@ -79,6 +79,9 @@ public class PantallaPrincipalControladora implements Initializable {
     private HBox hBox2;
 
     @FXML
+    private CustomTextField txtFieldValor;
+
+    @FXML
     private PrefixSelectionComboBox<Algoritmo> comboBoxSeleccioneAlgoritmo;
 
     @FXML
@@ -233,7 +236,7 @@ public class PantallaPrincipalControladora implements Initializable {
     }
 
     void algortimoJ48() {
-        AlgoritmoJ48 j48 = new AlgoritmoJ48(file);
+        AlgoritmoJ48 j48 = new AlgoritmoJ48(file, txtFieldValor);
         txtArea.setText(j48.imprimir().toString());
     }
 

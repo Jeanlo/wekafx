@@ -63,6 +63,7 @@
                         </HBox>
                         <HBox fx:id="hBox2" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                             <children>
+                                <CustomTextField fx:id="txtFieldValor"/>
                                 <PrefixSelectionComboBox fx:id="comboBoxSeleccioneAlgoritmo" maxWidth="300.0"
                                                          minHeight="25.0" minWidth="300.0"
                                                          onAction="#comboBoxSeleccionAlgoritmoClick"
